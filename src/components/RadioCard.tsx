@@ -9,7 +9,6 @@ interface RadioCardProps {
     frequency: string;
     streamUrl: string;
     genre: string;
-    language: string;
   };
   isPlaying: boolean;
   onPlay: () => void;
@@ -28,37 +27,31 @@ const RadioCard = ({
 }: RadioCardProps) => {
   return (
     <div className={cn(
-      "glass-card rounded-xl p-6 transition-all duration-300",
-      "hover:shadow-lg hover:scale-[1.02]",
+      "glass-card rounded-xl p-6",
       "flex flex-col space-y-4"
     )}>
       <div className="flex justify-between items-start">
         <div>
-          <div className="flex gap-2">
-            <span className="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary">
-              {station.genre}
-            </span>
-            <span className="px-2 py-1 text-xs rounded-full bg-secondary/80 text-secondary-foreground">
-              {station.language}
-            </span>
-          </div>
-          <h3 className="mt-2 text-xl font-semibold">{station.name}</h3>
-          <p className="text-sm text-muted-foreground">{station.frequency}</p>
+          <span className="px-3 py-1 text-xs rounded-full bg-white/20 text-white font-medium">
+            {station.genre}
+          </span>
+          <h3 className="mt-3 text-2xl font-bold text-white">{station.name}</h3>
+          <p className="text-sm text-white/70 mt-1">{station.frequency}</p>
         </div>
         <button
           onClick={isPlaying ? onPause : onPlay}
-          className="p-3 rounded-full bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
+          className="p-4 rounded-full bg-white/20 text-white hover:bg-white/30 transition-all duration-300 hover:scale-110"
         >
           {isPlaying ? (
-            <Pause className="w-5 h-5" />
+            <Pause className="w-6 h-6" />
           ) : (
-            <Play className="w-5 h-5" />
+            <Play className="w-6 h-6" />
           )}
         </button>
       </div>
       {isPlaying && (
-        <div className="flex items-center space-x-2">
-          <Volume2 className="w-4 h-4 text-muted-foreground" />
+        <div className="flex items-center space-x-3 pt-2">
+          <Volume2 className="w-4 h-4 text-white/70" />
           <Slider
             value={[volume]}
             onValueChange={onVolumeChange}

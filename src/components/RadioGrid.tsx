@@ -1,6 +1,5 @@
 import { useState } from "react";
 import RadioCard from "./RadioCard";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const RADIO_STATIONS = [
   {
@@ -8,74 +7,91 @@ const RADIO_STATIONS = [
     name: "Classic FM",
     frequency: "89.9 MHz",
     streamUrl: "https://media-ssl.musicradio.com/ClassicFM",
-    genre: "Classical",
-    language: "English"
+    genre: "Classical"
   },
   {
     id: "2",
     name: "Jazz Cafe",
     frequency: "92.3 MHz",
     streamUrl: "https://strm112.1.fm/ajazz_mobile_mp3",
-    genre: "Jazz",
-    language: "English"
+    genre: "Jazz"
   },
   {
     id: "3",
-    name: "Radio France",
+    name: "Rock Radio",
     frequency: "95.5 MHz",
-    streamUrl: "https://strm112.1.fm/francemusic_mobile_mp3",
-    genre: "Various",
-    language: "French"
+    streamUrl: "https://stream.laut.fm/rockradio",
+    genre: "Rock"
   },
   {
     id: "4",
-    name: "Deutsche Welle",
+    name: "Chill Lounge",
     frequency: "98.1 MHz",
-    streamUrl: "https://strm112.1.fm/deutschewelle_mobile_mp3",
-    genre: "Various",
-    language: "German"
+    streamUrl: "https://strm112.1.fm/chilloutlounge_mobile_mp3",
+    genre: "Lounge"
   },
   {
     id: "5",
-    name: "Radio Italia",
+    name: "Electronic Beats",
     frequency: "101.7 MHz",
-    streamUrl: "https://strm112.1.fm/italianradio_mobile_mp3",
-    genre: "Various",
-    language: "Italian"
+    streamUrl: "https://strm112.1.fm/electronica_mobile_mp3",
+    genre: "Electronic"
   },
   {
     id: "6",
-    name: "Radio España",
+    name: "World Music",
     frequency: "103.3 MHz",
-    streamUrl: "https://strm112.1.fm/spanishmusic_mobile_mp3",
-    genre: "Various",
-    language: "Spanish"
+    streamUrl: "https://strm112.1.fm/world_mobile_mp3",
+    genre: "World"
   },
   {
     id: "7",
-    name: "J-Pop Radio",
+    name: "Hip Hop Nation",
     frequency: "105.5 MHz",
-    streamUrl: "https://strm112.1.fm/jpop_mobile_mp3",
-    genre: "Pop",
-    language: "Japanese"
+    streamUrl: "https://strm112.1.fm/hiphop_mobile_mp3",
+    genre: "Hip Hop"
   },
   {
     id: "8",
-    name: "K-Pop Hits",
+    name: "Country Roads",
     frequency: "107.1 MHz",
-    streamUrl: "https://strm112.1.fm/kpop_mobile_mp3",
-    genre: "Pop",
-    language: "Korean"
+    streamUrl: "https://strm112.1.fm/country_mobile_mp3",
+    genre: "Country"
+  },
+  {
+    id: "9",
+    name: "Latin Vibes",
+    frequency: "108.9 MHz",
+    streamUrl: "https://strm112.1.fm/latin_mobile_mp3",
+    genre: "Latin"
+  },
+  {
+    id: "10",
+    name: "Blues Corner",
+    frequency: "91.1 MHz",
+    streamUrl: "https://strm112.1.fm/blues_mobile_mp3",
+    genre: "Blues"
+  },
+  {
+    id: "11",
+    name: "Reggae Roots",
+    frequency: "93.7 MHz",
+    streamUrl: "https://strm112.1.fm/reggae_mobile_mp3",
+    genre: "Reggae"
+  },
+  {
+    id: "12",
+    name: "Indie Underground",
+    frequency: "96.3 MHz",
+    streamUrl: "https://strm112.1.fm/indie_mobile_mp3",
+    genre: "Indie"
   }
 ];
-
-const LANGUAGES = ["All", "English", "French", "German", "Italian", "Spanish", "Japanese", "Korean"];
 
 const RadioGrid = () => {
   const [playing, setPlaying] = useState<string | null>(null);
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
   const [volume, setVolume] = useState(80);
-  const [selectedLanguage, setSelectedLanguage] = useState("All");
 
   const handlePlay = (station: typeof RADIO_STATIONS[0]) => {
     if (audio) {
@@ -103,42 +119,19 @@ const RadioGrid = () => {
     }
   };
 
-  const filteredStations = selectedLanguage === "All" 
-    ? RADIO_STATIONS 
-    : RADIO_STATIONS.filter(station => station.language === selectedLanguage);
-
   return (
-    <div className="space-y-6">
-      <div className="flex justify-end px-6">
-        <Select
-          value={selectedLanguage}
-          onValueChange={setSelectedLanguage}
-        >
-          <SelectTrigger className="w-[180px] glass-card">
-            <SelectValue placeholder="Select Language" />
-          </SelectTrigger>
-          <SelectContent>
-            {LANGUAGES.map((language) => (
-              <SelectItem key={language} value={language}>
-                {language}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
-        {filteredStations.map((station) => (
-          <RadioCard
-            key={station.id}
-            station={station}
-            isPlaying={playing === station.id}
-            onPlay={() => handlePlay(station)}
-            onPause={handlePause}
-            volume={volume}
-            onVolumeChange={handleVolumeChange(station)}
-          />
-        ))}
-      </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+      {RADIO_STATIONS.map((station) => (
+        <RadioCard
+          key={station.id}
+          station={station}
+          isPlaying={playing === station.id}
+          onPlay={() => handlePlay(station)}
+          onPause={handlePause}
+          volume={volume}
+          onVolumeChange={handleVolumeChange(station)}
+        />
+      ))}
     </div>
   );
 };
