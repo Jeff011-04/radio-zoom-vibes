@@ -43,6 +43,48 @@ const RADIO_STATIONS = [
     frequency: "103.3 MHz",
     streamUrl: "https://stream.worldmusicradio.org/live",
     genre: "World"
+  },
+  {
+    id: "7",
+    name: "Hip Hop Nation",
+    frequency: "105.5 MHz",
+    streamUrl: "https://stream.hiphopnation.com/live",
+    genre: "Hip Hop"
+  },
+  {
+    id: "8",
+    name: "Country Roads",
+    frequency: "107.1 MHz",
+    streamUrl: "https://stream.countryroads.com/live",
+    genre: "Country"
+  },
+  {
+    id: "9",
+    name: "Latin Vibes",
+    frequency: "108.9 MHz",
+    streamUrl: "https://stream.latinvibes.com/live",
+    genre: "Latin"
+  },
+  {
+    id: "10",
+    name: "Blues Corner",
+    frequency: "91.1 MHz",
+    streamUrl: "https://stream.bluescorner.com/live",
+    genre: "Blues"
+  },
+  {
+    id: "11",
+    name: "Reggae Roots",
+    frequency: "93.7 MHz",
+    streamUrl: "https://stream.reggaeroots.com/live",
+    genre: "Reggae"
+  },
+  {
+    id: "12",
+    name: "Indie Underground",
+    frequency: "96.3 MHz",
+    streamUrl: "https://stream.indieunderground.com/live",
+    genre: "Indie"
   }
 ];
 
