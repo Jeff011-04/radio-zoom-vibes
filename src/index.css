@@ -54,19 +54,12 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground min-h-screen;
-    background: linear-gradient(102.3deg, rgba(147,39,143,1) 5.9%, rgba(234,172,232,1) 64%, rgba(246,219,245,1) 89%);
+    @apply bg-background text-foreground;
   }
 }
 
 .glass-card {
-  @apply bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl;
-  transition: all 0.3s ease-in-out;
-}
-
-.glass-card:hover {
-  @apply bg-white/20 scale-[1.02] shadow-2xl;
-  transform: translateY(-5px);
+  @apply bg-white/10 backdrop-blur-lg border border-white/20;
 }
 
 .preloader {
