@@ -13,77 +13,77 @@ const RADIO_STATIONS = [
     id: "2",
     name: "Jazz Cafe",
     frequency: "92.3 MHz",
-    streamUrl: "https://streaming.radio.co/s774a14648/listen",
+    streamUrl: "https://strm112.1.fm/ajazz_mobile_mp3",
     genre: "Jazz"
   },
   {
     id: "3",
     name: "Rock Radio",
     frequency: "95.5 MHz",
-    streamUrl: "https://stream.rockradio.com/main",
+    streamUrl: "https://stream.laut.fm/rockradio",
     genre: "Rock"
   },
   {
     id: "4",
     name: "Chill Lounge",
     frequency: "98.1 MHz",
-    streamUrl: "https://streaming.radio.co/s5c5da6a36/listen",
+    streamUrl: "https://strm112.1.fm/chilloutlounge_mobile_mp3",
     genre: "Lounge"
   },
   {
     id: "5",
     name: "Electronic Beats",
     frequency: "101.7 MHz",
-    streamUrl: "https://streams.electronic-beats.com/live",
+    streamUrl: "https://strm112.1.fm/electronica_mobile_mp3",
     genre: "Electronic"
   },
   {
     id: "6",
     name: "World Music",
     frequency: "103.3 MHz",
-    streamUrl: "https://stream.worldmusicradio.org/live",
+    streamUrl: "https://strm112.1.fm/world_mobile_mp3",
     genre: "World"
   },
   {
     id: "7",
     name: "Hip Hop Nation",
     frequency: "105.5 MHz",
-    streamUrl: "https://stream.hiphopnation.com/live",
+    streamUrl: "https://strm112.1.fm/hiphop_mobile_mp3",
     genre: "Hip Hop"
   },
   {
     id: "8",
     name: "Country Roads",
     frequency: "107.1 MHz",
-    streamUrl: "https://stream.countryroads.com/live",
+    streamUrl: "https://strm112.1.fm/country_mobile_mp3",
     genre: "Country"
   },
   {
     id: "9",
     name: "Latin Vibes",
     frequency: "108.9 MHz",
-    streamUrl: "https://stream.latinvibes.com/live",
+    streamUrl: "https://strm112.1.fm/latin_mobile_mp3",
     genre: "Latin"
   },
   {
     id: "10",
     name: "Blues Corner",
     frequency: "91.1 MHz",
-    streamUrl: "https://stream.bluescorner.com/live",
+    streamUrl: "https://strm112.1.fm/blues_mobile_mp3",
     genre: "Blues"
   },
   {
     id: "11",
     name: "Reggae Roots",
     frequency: "93.7 MHz",
-    streamUrl: "https://stream.reggaeroots.com/live",
+    streamUrl: "https://strm112.1.fm/reggae_mobile_mp3",
     genre: "Reggae"
   },
   {
     id: "12",
     name: "Indie Underground",
     frequency: "96.3 MHz",
-    streamUrl: "https://stream.indieunderground.com/live",
+    streamUrl: "https://strm112.1.fm/indie_mobile_mp3",
     genre: "Indie"
   }
 ];
