@@ -9,6 +9,7 @@ interface RadioCardProps {
     frequency: string;
     streamUrl: string;
     genre: string;
+    language: string;
   };
   isPlaying: boolean;
   onPlay: () => void;
@@ -33,9 +34,14 @@ const RadioCard = ({
     )}>
       <div className="flex justify-between items-start">
         <div>
-          <span className="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary">
-            {station.genre}
-          </span>
+          <div className="flex gap-2">
+            <span className="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary">
+              {station.genre}
+            </span>
+            <span className="px-2 py-1 text-xs rounded-full bg-secondary/80 text-secondary-foreground">
+              {station.language}
+            </span>
+          </div>
           <h3 className="mt-2 text-xl font-semibold">{station.name}</h3>
           <p className="text-sm text-muted-foreground">{station.frequency}</p>
         </div>
